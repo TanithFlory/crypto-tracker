@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200;400;700&display=swap");
+:root {
+  font-family: "Heebo", sans-serif;
+  background-color: var(--clr-primary);
+  color: var(--clr-text2);
+
+  --clr-primary: #111228;
+  --clr-secondary: #4dbad8;
+  --clr-text1: #718ab4;
+  --clr-text2: #e0eaf9;
+  --clr-white: #fff;
+  --clr-gradient: linear-gradient(
+    90deg,
+    rgba(125, 73, 234, 1) 0%,
+    rgba(54, 146, 242, 1) 50%,
+    rgba(77, 184, 214, 1) 82%
+  );
+  --fs-custom: 4rem;
+  --fs-l: 1.5rem;
+}
+
+body,
+html {
+  margin: 0;
+  overflow-x: hidden;
+}
