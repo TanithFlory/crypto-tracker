@@ -6,8 +6,9 @@ const SHeader = styled.header`
   align-items: center;
   justify-content: space-around;
   height: 100vh;
-  & > div {
+  div:first-child {
     text-align: center;
+    margin-top: 3rem;
     h1 {
       margin: 0;
       font-size: var(--fs-custom);
@@ -24,17 +25,21 @@ const SHeader = styled.header`
     }
   }
   & > div:nth-child(2) {
+    width: 100%;
+    max-width: 450px;
     & > div {
       position: relative;
       background: var(--clr-gradient);
       border-radius: 26px;
-      padding: 2px;
+      padding: 3px;
       input {
-        width: 400px;
+        width: 100%;
+        box-sizing: border-box;
         height: 45px;
         border-radius: 26px;
         padding-inline: 32px;
         background-color: black;
+        text-overflow: ellipsis;
         color: var(--clr-secondary);
       }
       input::placeholder {
@@ -64,7 +69,7 @@ const SHeader = styled.header`
       height: 45px;
       border-radius: 26px;
       background-color: var(--clr-primary);
-      border: 2px solid var(--clr-secondary);
+      border: 3px solid var(--clr-secondary);
       color: var(--clr-white);
       cursor: pointer;
       display: flex;

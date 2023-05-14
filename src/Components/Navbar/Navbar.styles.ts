@@ -11,11 +11,12 @@ const SNavbar = styled.nav`
   ul {
     font-weight: 700;
     display: flex;
+    align-items: center;
     list-style: none;
     gap: 1.5rem;
     padding: 0;
-    div {
-      margin-left: 3rem;
+    & > div {
+      margin-left: 2rem;
     }
     a {
       text-decoration: none;

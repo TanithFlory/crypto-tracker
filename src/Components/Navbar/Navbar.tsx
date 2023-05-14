@@ -1,5 +1,5 @@
 import SNavbar from "./Navbar.styles";
-
+import Language from "./Language/Language";
 const Navbar = () => {
   return (
     <SNavbar>
@@ -12,7 +12,7 @@ const Navbar = () => {
             </li>
           );
         })}
-        <div>Language</div>
+        <Language />
       </ul>
     </SNavbar>
   );

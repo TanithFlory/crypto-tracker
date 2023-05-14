@@ -1,21 +1,29 @@
 import SHeader from "./Header.styles";
 import { BsSearch, BsChevronDown } from "react-icons/bs";
+import { useTranslation, Trans } from "react-i18next";
+
 const Header = () => {
+  const { t } = useTranslation();
   return (
     <SHeader>
       <div>
         <h1>
-          Unlock The <br /> <span>Decentralized </span>
-          Future.
+          <Trans i18nKey={"header"}>
+            a<span>b</span>
+          </Trans>
         </h1>
         <h3>
-          1 - click Trade + Earn Yield on Native <span>Bitcoin.</span> <br />{" "}
-          Your <span>Keys.</span>
+          <Trans i18nKey={"headerSub"}>
+            a<span>b</span>
+          </Trans>
         </h3>
       </div>
       <div>
         <div>
-          <input type="text" placeholder="Search 1,000 coins across networks" />
+          <input
+            type="text"
+            placeholder={t("searchPlaceholder") ?? undefined}
+          />
           <button>
             <BsSearch />
           </button>
