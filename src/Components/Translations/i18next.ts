@@ -9,7 +9,7 @@ i18n.use(initReactI18next).init({
       translations: {
         header: "Unlock The <br/> <1>Decentralized </1>Future.",
         headerSub:
-          "Real-time <1>Cryptocurrency</1> Prices at Your <1>Fingertips.</1>",
+          "Real-time <1>Cryptocurrency</1> Prices at your <1>Fingertips.</1>",
         searchPlaceholder: "Search 1,000 coins across networks",
       },
     },

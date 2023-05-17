@@ -1,14 +1,14 @@
 import Navbar from "../Components/Navbar/Navbar";
 import Header from "../Components/Header/Header";
 import { useState, useCallback, useEffect } from "react";
-import { Coin } from "../types";
+import { ICoin } from "../types";
 import axios from "axios";
 
 const Home = () => {
-  const [coins, setCoins] = useState<Coin[]>([]);
+  const [coins, setCoins] = useState<ICoin[]>([]);
   const getData = useCallback(async () => {
     let i = 1;
-    while (i <= 5) {
+    while (i <= 3) {
       const response = await axios.get(
         `https://api.coingecko.com/api/v3/coins/markets`,
         {
@@ -29,9 +29,7 @@ const Home = () => {
   useEffect(() => {
     getData();
   }, []);
-  useEffect(() => {
-    console.log(coins);
-  }, [coins]);
+
   return (
     <>
       <Navbar />
