@@ -23,14 +23,17 @@
   --clr-text1: #718ab4;
   --clr-text2: #e0eaf9;
   --clr-white: #fff;
+  --clr-black: #000;
   --clr-gradient: linear-gradient(
     90deg,
     rgba(125, 73, 234, 1) 0%,
     rgba(54, 146, 242, 1) 50%,
     rgba(77, 184, 214, 1) 82%
   );
+  --clr-hover: #C7E0F3;
   --fs-custom: 4rem;
   --fs-l: 1.5rem;
+  --fs-m: 1rem;
 }
 
 body,

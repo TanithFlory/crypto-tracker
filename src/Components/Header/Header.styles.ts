@@ -6,7 +6,7 @@ const SHeader = styled.header`
   align-items: center;
   justify-content: space-around;
   height: 100vh;
-  div:first-child {
+  & > div:first-child {
     text-align: center;
     margin-top: 3rem;
     h1 {
@@ -27,12 +27,13 @@ const SHeader = styled.header`
   & > div:nth-child(2) {
     width: 100%;
     max-width: 450px;
+    position: relative;
     & > div {
-      position: relative;
+      cursor: pointer;
       background: var(--clr-gradient);
       border-radius: 26px;
       padding: 3px;
-      input {
+      .searchBox {
         width: 100%;
         box-sizing: border-box;
         height: 45px;
@@ -40,26 +41,19 @@ const SHeader = styled.header`
         padding-inline: 32px;
         background-color: black;
         text-overflow: ellipsis;
-        color: var(--clr-secondary);
-      }
-      input::placeholder {
         color: var(--clr-text1);
-      }
-      input,
-      input:focus {
-        outline: none;
-        border: none;
-      }
-      button {
-        position: absolute;
-        right: 18px;
-        background-color: transparent;
-        border: none;
-        top: 16px;
-        cursor: pointer;
-        svg {
-          transform: scale(2);
-          fill: var(--clr-secondary);
+        display: flex;
+        align-items: center;
+        div {
+          position: absolute;
+          right: 25px;
+          background-color: transparent;
+          border: none;
+          top: 16px;
+          svg {
+            transform: scale(1.8);
+            fill: var(--clr-secondary);
+          }
         }
       }
     }
@@ -80,6 +74,14 @@ const SHeader = styled.header`
         background-color: var(--clr-secondary);
       }
     }
+  }
+  .search-menu {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    min-height: 450px;
   }
 `;
 
