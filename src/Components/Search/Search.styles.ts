@@ -56,31 +56,6 @@ const SSearch = styled.div`
         margin: 0;
       }
     }
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 55px;
-      padding-inline: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-      & > div {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        img {
-          height: 30px;
-          aspect-ratio: 1/1;
-        }
-      }
-      &:hover {
-        background-color: var(--clr-hover);
-      }
-      h4 {
-        color: var(--clr-black);
-        margin: 0;
-      }
-    }
   }
 `;
 

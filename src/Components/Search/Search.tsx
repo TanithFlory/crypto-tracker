@@ -46,7 +46,7 @@ const Search = (props: ISearchProps) => {
         {!searchResults.length && (
           <>
             <div>
-              <h3>Popular</h3> <BsFire />
+              <h3>{searchResults.length&&''}</h3> <BsFire />
             </div>
           </>
         )}
