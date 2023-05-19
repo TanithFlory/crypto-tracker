@@ -3,6 +3,7 @@ import Header from "../Components/Header/Header";
 import { useState, useCallback, useEffect } from "react";
 import { ICoin } from "../types";
 import axios from "axios";
+import CryptoBenefits from "../Components/CryptoBenefits/CryptoBenefits";
 
 const Home = () => {
   const [coins, setCoins] = useState<ICoin[]>([]);
@@ -34,6 +35,7 @@ const Home = () => {
     <>
       <Navbar />
       <Header coinData={coins} />
+      <CryptoBenefits />
     </>
   );
 };

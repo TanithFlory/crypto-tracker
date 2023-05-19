@@ -6,6 +6,7 @@ const SHeader = styled.header`
   align-items: center;
   justify-content: space-around;
   height: 100vh;
+  background: var(--clr-background);
   & > div:first-child {
     text-align: center;
     margin-top: 3rem;

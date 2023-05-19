@@ -1,21 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200;400;700&display=swap");
 :root {
   font-family: "Heebo", sans-serif;
-  background-image: linear-gradient(
-    to right bottom,
-    #111228,
-    #111329,
-    #11132a,
-    #10142b,
-    #10142c,
-    #141833,
-    #181d39,
-    #1c2140,
-    #262c4e,
-    #30375d,
-    #3a426c,
-    #444e7b
-  );
   color: var(--clr-text2);
 
   --clr-primary: #111228;
@@ -30,10 +15,27 @@
     rgba(54, 146, 242, 1) 50%,
     rgba(77, 184, 214, 1) 82%
   );
-  --clr-hover: #C7E0F3;
+  --clr-hover: #c7e0f3;
+  --clr-background: linear-gradient(
+    to right bottom,
+    #111228,
+    #111329,
+    #11132a,
+    #10142b,
+    #10142c,
+    #141833,
+    #181d39,
+    #1c2140,
+    #262c4e,
+    #30375d,
+    #3a426c,
+    #444e7b
+  );
   --fs-custom: 4rem;
+  --fs-xxl: 3rem;
   --fs-l: 1.5rem;
-  --fs-m: 1rem;
+  --fs-m: 1.3rem;
+  
 }
 
 body,
