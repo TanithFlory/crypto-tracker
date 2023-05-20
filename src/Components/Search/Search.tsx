@@ -43,11 +43,11 @@ const Search = (props: ISearchProps) => {
         </div>
       </div>
       <div>
-        {!searchResults.length && (
+        {searchResults.length ? (
+          ""
+        ) : (
           <>
-            <div>
-              <h3>{searchResults.length&&''}</h3> <BsFire />
-            </div>
+            Trending <BsFire />
           </>
         )}
         {searchResults.length

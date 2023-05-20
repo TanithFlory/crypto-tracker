@@ -1,22 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import SHeader from "./Header.styles";
 import { BsSearch, BsChevronDown } from "react-icons/bs";
 import { useTranslation, Trans } from "react-i18next";
-import { ICoin } from "../../types";
 import Search from "../Search/Search";
-
-interface IHeaderProps {
-  coinData: ICoin[];
-}
-
-const Header = (props: IHeaderProps) => {
+import { CryptoDataContext } from "../../Contexts/CryptoDataContext";
+const Header = () => {
   const [searchMenu, setSearchMenu] = useState(false);
   const { t } = useTranslation();
 
   const toggleSearchMenu = (): void => {
     setSearchMenu((prev) => !prev);
   };
-
+  const coinData = useContext(CryptoDataContext);
+  
   return (
     <SHeader>
       <div>
@@ -43,7 +39,7 @@ const Header = (props: IHeaderProps) => {
             <Search
               className="search-menu"
               toggleMenu={toggleSearchMenu}
-              coinData={props.coinData}
+              coinData={coinData}
             />
           )}
         </div>

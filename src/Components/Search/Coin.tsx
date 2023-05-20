@@ -1,18 +1,20 @@
 import { ICoin } from "../../types";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 interface CoinProps {
   d: ICoin;
   key: string;
 }
 
-const SCoin = styled.a`
+const SCoin = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 55px;
   padding-inline: 5px;
   border-radius: 5px;
+  text-decoration: none;
   cursor: pointer;
   & > div {
     display: flex;
@@ -34,7 +36,7 @@ const SCoin = styled.a`
 
 const Coin = (props: CoinProps) => {
   return (
-    <SCoin key={props.d.id}>
+    <SCoin key={props.d.id} to={`/dashboard/${props.d.id}`}>
       <div>
         <img src={props.d.image} />
         <h4>{props.d.name}</h4>

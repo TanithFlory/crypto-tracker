@@ -1,5 +1,6 @@
 import SNavbar from "./Navbar.styles";
 import Language from "./Language/Language";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <SNavbar>
@@ -8,7 +9,7 @@ const Navbar = () => {
         {["Home", "About", "Coins", "Prices"].map((d, index) => {
           return (
             <li key={`nav-option-${index}`}>
-              <a href={`#${d}`}>{d}</a>
+              <Link to={`${d.toLowerCase()}`}>{d}</Link>
             </li>
           );
         })}
