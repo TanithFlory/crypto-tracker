@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ICoin } from "../types";
+import { ICoin, ICoinPrice } from "../types";
 
 export const BasicCoinData = (): Promise<ICoin[]> => {
   let i = 1;
@@ -21,5 +21,22 @@ export const BasicCoinData = (): Promise<ICoin[]> => {
       data = [...data, ...response.data];
     }
     resolve(data);
+  });
+};
+
+export const CoinGraphData = (
+  coin: string | undefined
+): Promise<ICoinPrice[]> => {
+  return new Promise(async (resolve) => {
+    const response = await axios.get(
+      `https://api.coingecko.com/api/v3/coins/${coin}/market_chart`,
+      {
+        params: {
+          vs_currency: "USD",
+          days: 30,
+        },
+      }
+    );
+    resolve(response.data.prices);
   });
 };

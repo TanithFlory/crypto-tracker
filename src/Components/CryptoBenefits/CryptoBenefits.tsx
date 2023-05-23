@@ -29,7 +29,9 @@ const benefits = [
 
 const CryptoBenefits = () => {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
     AOS.refresh();
   }, []);
   return (

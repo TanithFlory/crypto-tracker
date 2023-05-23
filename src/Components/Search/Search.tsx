@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CryptoDataContext } from "../../Contexts/CryptoDataContext";
 import SSearch from "./Search.styles";
 import Coin from "./Coin";
 import { BsSearch, BsFire } from "react-icons/bs";
@@ -9,17 +10,17 @@ import { ICoin } from "../../types";
 interface ISearchProps {
   className: string;
   toggleMenu: () => void;
-  coinData: ICoin[];
 }
 
 const Search = (props: ISearchProps) => {
   const { t } = useTranslation();
   const [searchResults, setSearchResults] = useState<ICoin[]>([]);
+  const coinData = useContext(CryptoDataContext);
   const searchHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchResults([]);
     let count = 0;
-    for (let i = 0; i < props.coinData.length && count < 6; i++) {
-      let item = props.coinData[i];
+    for (let i = 0; i < coinData.length && count < 6; i++) {
+      let item = coinData[i];
       if (
         item.name.toLowerCase().includes(e.target.value.toLowerCase()) &&
         e.target.value.length
@@ -46,15 +47,15 @@ const Search = (props: ISearchProps) => {
         {searchResults.length ? (
           ""
         ) : (
-          <>
+          <div>
             Trending <BsFire />
-          </>
+          </div>
         )}
         {searchResults.length
           ? searchResults?.map((d) => {
               return <Coin key={d.id} d={d} />;
             })
-          : props.coinData.slice(0, 8).map((d) => {
+          : coinData.slice(0, 8).map((d) => {
               return (
                 d.id !== "tether" &&
                 d.id !== "usd-coin" && <Coin key={d.id} d={d} />

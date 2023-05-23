@@ -7,6 +7,7 @@
   --clr-secondary: #4dbad8;
   --clr-text1: #718ab4;
   --clr-text2: #e0eaf9;
+  --clr-text3: #A7A4BA;
   --clr-white: #fff;
   --clr-black: #000;
   --clr-gradient: linear-gradient(
@@ -15,6 +16,7 @@
     rgba(54, 146, 242, 1) 50%,
     rgba(77, 184, 214, 1) 82%
   );
+  --clr-purple: #3b3364;
   --clr-hover: #c7e0f3;
   --clr-background: linear-gradient(
     to right bottom,
@@ -35,7 +37,7 @@
   --fs-xxl: 3rem;
   --fs-l: 1.5rem;
   --fs-m: 1.3rem;
-  
+  --fs-s: 1rem;
 }
 
 body,

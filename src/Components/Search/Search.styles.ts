@@ -35,7 +35,7 @@ const SSearch = styled.div`
       box-sizing: border-box;
       height: 50px;
       color: var(--clr-black);
-      font-size: var(--fs-m);
+      font-size: var(--fs-s);
       padding-inline: 35px;
     }
   }

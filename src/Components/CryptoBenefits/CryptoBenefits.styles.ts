@@ -20,7 +20,7 @@ const SCryptoBenefits = styled.div`
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin: 0;
-      text-align: center;
+      align-self:center;
     }
     p {
       text-align: center;
