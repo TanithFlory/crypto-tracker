@@ -5,7 +5,7 @@ export interface ICoin {
   current_price: number;
 }
 
-export type ICoinPrice = [number, number];
+export type ICoinPrice = [Date, number];
 
 export interface IAboutCoin {
   name: string;

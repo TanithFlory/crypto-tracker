@@ -5,7 +5,7 @@ import { ICoinPrice } from "../../types";
 import useWindowDimensions from "../../CustomHooks/useWindowDimensions";
 
 interface IProps {
-  graphData: any[];
+  graphData: ICoinPrice[];
 }
 
 const CoinLineGraph = (props: IProps) => {
@@ -33,21 +33,17 @@ const CoinLineGraph = (props: IProps) => {
         .attr("stroke-width", 0)
         .attr("transform", `translate(${margin.top + 5},${height})`)
         .call(
-          d3
-            .axisBottom(x)
-            .tickSizeInner(3)
-            .tickSizeOuter(0)
-            .tickFormat((d, i) => {
-              const date = new Date(d.toString()).toLocaleString("default", {
-                day: "numeric",
-              });
-              const month = new Date(d.toString()).toLocaleString("default", {
-                month: "short",
-              });
-              if (!i || Number(date) % 7 === 0) return `${month}`;
-              if (i % 3 === 0) return `${date}`;
-              return "";
-            })
+          d3.axisBottom(x).tickFormat((d, i) => {
+            const date = new Date(d.toString()).toLocaleString("default", {
+              day: "numeric",
+            });
+            const month = new Date(d.toString()).toLocaleString("default", {
+              month: "short",
+            });
+            if (!i || Number(date) % 7 === 0) return `${month}`;
+            if (i % 3 === 0) return `${date}`;
+            return "";
+          })
         );
 
       const max = d3.max(props.graphData, (d) => d[1])!;
@@ -91,7 +87,7 @@ const CoinLineGraph = (props: IProps) => {
         .attr(
           "d",
           d3
-            .line()
+            .line<[Date, number]>()
             .x((d) => x(d[0]))
             .y((d) => y(d[1]))
         );
@@ -183,6 +179,7 @@ const CoinLineGraph = (props: IProps) => {
           </div>
         </div>
       </div>
+      <div className="circle" />
     </SCoinLineGraph>
   );
 };

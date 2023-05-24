@@ -45,9 +45,42 @@ const SCoinLineGraph = styled.div`
     stroke-width: 2;
     opacity: 0;
   }
+  .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    -webkit-animation: pulse 1s alternate infinite;
+    -moz-animation: pulse 1s alternate infinite;
+  }
   .visible {
     opacity: 1;
   }
+/* 
+  @-webkit-keyframes pulse {
+    0% {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: inset 0px 0px 10px 2px rgba(0, 255, 182, 0.5),
+        0px 0px 5px 2px rgba(0, 255, 135, 0.3);
+    }
+    100% {
+      background: rgba(255, 255, 255, 1);
+      box-shadow: inset 0px 0px 10px 2px rgba(0, 255, 182, 0.5),
+        0px 0px 15px 2px rgba(0, 255, 135, 1);
+    }
+  }
+
+  @-moz-keyframes pulse {
+    0% {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: inset 0px 0px 10px 2px rgba(0, 255, 182, 0.5),
+        0px 0px 5px 2px rgba(0, 255, 135, 0.3);
+    }
+    100% {
+      background: rgba(255, 255, 255, 1);
+      box-shadow: inset 0px 0px 10px 2px rgba(0, 255, 182, 0.5),
+        0px 0px 15px 2px rgba(0, 255, 135, 1);
+    }
+  } */
 `;
 
 export default SCoinLineGraph;
