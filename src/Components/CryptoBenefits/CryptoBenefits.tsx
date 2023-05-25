@@ -45,7 +45,7 @@ const CryptoBenefits = () => {
         >
           <div>{benefit.icon}</div>
           <div className="crypto-content">
-            <h1>{benefit.title}</h1>
+            <h1 className="gradient-text">{benefit.title}</h1>
             <p>{benefit.description}</p>
           </div>
         </div>

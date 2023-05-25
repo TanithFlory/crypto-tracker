@@ -8,16 +8,6 @@ const SAboutCoin = styled.div`
   max-width: 550px;
   padding: 2rem;
   grid-row: 1;
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: white;
-    border-radius: 3px;
-  }
   h1,
   h4,
   p {
@@ -29,11 +19,6 @@ const SAboutCoin = styled.div`
 
     & > h1 {
       margin-bottom: 1rem;
-      background-image: var(--clr-gradient);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      align-self: center;
     }
   }
   & > :nth-child(2) {

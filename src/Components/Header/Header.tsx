@@ -16,12 +16,12 @@ const Header = () => {
       <div>
         <h1>
           <Trans i18nKey={"header"}>
-            a<span>b</span>
+            a<span className="gradient-text">b</span>
           </Trans>
         </h1>
         <h3>
           <Trans i18nKey={"headerSub"}>
-            a<span>b</span>
+            a<span className="gradient-text">b</span>
           </Trans>
         </h3>
       </div>

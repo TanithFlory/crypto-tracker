@@ -7,9 +7,9 @@ interface IProps {
 
 const AboutCoin = (props: IProps) => {
   return (
-    <SAboutCoin>
+    <SAboutCoin className="custom-scroll">
       <div>
-        <h1>About {props.coinData?.name}</h1>
+        <h1 className="gradient-text">About {props.coinData?.name}</h1>
       </div>
       <div>
         <img src={props.coinData?.image.large} alt="coin" />

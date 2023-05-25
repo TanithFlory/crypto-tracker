@@ -12,7 +12,6 @@ const CoinLineGraph = (props: IProps) => {
   const [ref, setRef] = useState<HTMLElement | null>(null);
   const [width, height] = useWindowDimensions();
   useEffect(() => {
-    console.log(props.graphData);
     const margin = { top: 10, right: 30, bottom: 30, left: 60 };
     const svg = d3
       .select(ref)

@@ -7,7 +7,7 @@
   --clr-secondary: #4dbad8;
   --clr-text1: #718ab4;
   --clr-text2: #e0eaf9;
-  --clr-text3: #A7A4BA;
+  --clr-text3: #a7a4ba;
   --clr-white: #fff;
   --clr-black: #000;
   --clr-gradient: linear-gradient(
@@ -44,4 +44,12 @@ body,
 html {
   margin: 0;
   overflow-x: hidden;
+}
+
+.gradient-text {
+  background-image: var(--clr-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  align-self: center;
 }

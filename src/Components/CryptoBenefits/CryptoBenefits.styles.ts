@@ -15,10 +15,6 @@ const SCryptoBenefits = styled.div`
     }
     h1 {
       font-size: var(--fs-xxl);
-      background-image: var(--clr-gradient);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       margin: 0;
       align-self:center;
     }

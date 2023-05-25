@@ -15,12 +15,6 @@ const SHeader = styled.header`
       font-size: var(--fs-custom);
       line-height: 4rem;
     }
-    span {
-      background: var(--clr-gradient);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
     h3 {
       font-size: var(--fs-l);
     }
