@@ -8,6 +8,7 @@ const SNavbar = styled.nav`
   width: 100vw;
   height: 100px;
   gap: 10rem;
+  z-index: 9999;
   ul {
     font-weight: 700;
     display: flex;

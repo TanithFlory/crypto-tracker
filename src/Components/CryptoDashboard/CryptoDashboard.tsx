@@ -2,41 +2,50 @@ import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SCryptoDashboard from "./CryptoDashboard.styles";
 import CoinLineGraph from "../CoinLineGraph/CoinLineGraph";
-import { CoinGraphData } from "../../Api/ApiService";
-import { TCoinPrice, IAboutCoin } from "../../types";
+import {
+  getCoinData,
+  getCoinGraphData,
+  getCoinNews,
+} from "../../Api/ApiService";
+import { TCoinPrice, IAboutCoin, ICoinNews } from "../../types";
 import AboutCoin from "../AboutCoin/AboutCoin";
-import axios from "axios";
+
 import CoinNews from "../CoinNews/CoinNews";
 import TrendingCoins from "../TrendingCoins/TrendingCoins";
+import AOS from "aos";
+
 const CryptoDashboard = () => {
   const { id } = useParams();
   const [graphData, setGraphData] = useState<TCoinPrice[]>([]);
   const [coinData, setCoinData] = useState<IAboutCoin>();
-  const [coinNews, setCoinNews] = useState<any>();
+  const [coinNews, setCoinNews] = useState<ICoinNews[]>([]);
 
   const getData = useCallback(async () => {
-    const graphData = await CoinGraphData(id);
+    const graphData = await getCoinGraphData(id);
     setGraphData(graphData);
-    const response2 = await axios.get(
-      `https://api.coingecko.com/api/v3/coins/${id}`
-    );
-    setCoinData(response2.data);
 
-    const response = await axios.get(`https://newsapi.org/v2/everything`, {
-      params: {
-        q: `${id}`,
-        apiKey: "ea146e65687d429683c310204abc2667",
-      },
-    });
-    setCoinNews(response.data.articles.slice(0, 15));
-  }, [setGraphData, id]);
+    const coinData = await getCoinData(id);
+    setCoinData(coinData);
+
+    const coinNews = await getCoinNews(id);
+    setCoinNews(coinNews);
+  }, [setGraphData, setCoinData, setCoinNews, id]);
 
   useEffect(() => {
     getData();
   }, [getData, id]);
 
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, [id]);
+
   return (
-    <SCryptoDashboard>
+    <SCryptoDashboard
+      data-aos="fade-in"
+      data-aos-duration="1500"
+      data-aos-delay="500"
+    >
       <AboutCoin coinData={coinData} />
       <CoinNews
         coinNews={coinNews}

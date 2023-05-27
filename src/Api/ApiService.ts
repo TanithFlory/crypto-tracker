@@ -1,7 +1,7 @@
 import axios from "axios";
-import { ICoin, ICoinPrice } from "../types";
+import { IAboutCoin, ICoin, TCoinPrice } from "../types";
 
-export const BasicCoinData = (): Promise<ICoin[]> => {
+export const getBasicCoinData = (): Promise<ICoin[]> => {
   let i = 1;
   let data: ICoin[] = [];
 
@@ -24,9 +24,9 @@ export const BasicCoinData = (): Promise<ICoin[]> => {
   });
 };
 
-export const CoinGraphData = (
+export const getCoinGraphData = (
   coin: string | undefined
-): Promise<ICoinPrice[]> => {
+): Promise<TCoinPrice[]> => {
   return new Promise(async (resolve) => {
     const response = await axios.get(
       `https://api.coingecko.com/api/v3/coins/${coin}/market_chart`,
@@ -38,5 +38,26 @@ export const CoinGraphData = (
       }
     );
     resolve(response.data.prices);
+  });
+};
+
+export const getCoinData = (id: string | undefined): Promise<IAboutCoin> => {
+  return new Promise(async (resolve) => {
+    const response = await axios.get(
+      `https://api.coingecko.com/api/v3/coins/${id}`
+    );
+    resolve(response.data);
+  });
+};
+
+export const getCoinNews = (id: string | undefined): Promise<any> => {
+  return new Promise(async (resolve) => {
+    const response = await axios.get(`https://newsapi.org/v2/everything`, {
+      params: {
+        q: `${id}`,
+        apiKey: "ea146e65687d429683c310204abc2667",
+      },
+    });
+    resolve(response.data.articles.slice(0, 15));
   });
 };

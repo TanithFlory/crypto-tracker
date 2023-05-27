@@ -5,12 +5,12 @@ import Navbar from "./Components/Navbar/Navbar";
 import { useState, useCallback, useEffect } from "react";
 import { ICoin } from "./types";
 import { CryptoDataContext } from "./Contexts/CryptoDataContext";
-import { BasicCoinData } from "./Api/ApiService";
+import { getBasicCoinData } from "./Api/ApiService";
 
 function App() {
   const [coins, setCoins] = useState<ICoin[]>([]);
   const getData = useCallback(async () => {
-    const response = await BasicCoinData();
+    const response = await getBasicCoinData();
     setCoins(response);
   }, []);
 

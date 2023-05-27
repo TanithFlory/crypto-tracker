@@ -32,3 +32,10 @@ export interface IAboutCoin {
     };
   };
 }
+
+export interface ICoinNews {
+  urlToImage: string;
+  title: string;
+  description: string;
+  url: string;
+}
