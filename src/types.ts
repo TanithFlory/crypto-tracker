@@ -5,7 +5,7 @@ export interface ICoin {
   current_price: number;
 }
 
-export type ICoinPrice = [Date, number];
+export type TCoinPrice = [Date, number];
 
 export interface IAboutCoin {
   name: string;
@@ -21,4 +21,14 @@ export interface IAboutCoin {
     en: string;
   };
   symbol: string;
+  market_cap_rank: number;
+  hashing_algorithm: string;
+  links: {
+    homepage: string[];
+    blockchain_site: string[];
+    subreddit_url: string;
+    repos_url: {
+      github: string[];
+    };
+  };
 }

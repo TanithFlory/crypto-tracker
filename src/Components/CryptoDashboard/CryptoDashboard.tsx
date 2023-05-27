@@ -3,14 +3,14 @@ import { useParams } from "react-router-dom";
 import SCryptoDashboard from "./CryptoDashboard.styles";
 import CoinLineGraph from "../CoinLineGraph/CoinLineGraph";
 import { CoinGraphData } from "../../Api/ApiService";
-import { ICoinPrice, IAboutCoin } from "../../types";
+import { TCoinPrice, IAboutCoin } from "../../types";
 import AboutCoin from "../AboutCoin/AboutCoin";
 import axios from "axios";
 import CoinNews from "../CoinNews/CoinNews";
 import TrendingCoins from "../TrendingCoins/TrendingCoins";
 const CryptoDashboard = () => {
   const { id } = useParams();
-  const [graphData, setGraphData] = useState<ICoinPrice[]>([]);
+  const [graphData, setGraphData] = useState<TCoinPrice[]>([]);
   const [coinData, setCoinData] = useState<IAboutCoin>();
   const [coinNews, setCoinNews] = useState<any>();
 
@@ -28,9 +28,7 @@ const CryptoDashboard = () => {
         apiKey: "ea146e65687d429683c310204abc2667",
       },
     });
-    setCoinNews(
-      response.data.articles.slice(0, 15).filter((d: any) => d.urlToImage)
-    );
+    setCoinNews(response.data.articles.slice(0, 15));
   }, [setGraphData, id]);
 
   useEffect(() => {
@@ -39,9 +37,13 @@ const CryptoDashboard = () => {
 
   return (
     <SCryptoDashboard>
-      <CoinNews coinNews={coinNews} coinName={id} />
-      <CoinLineGraph graphData={graphData} />
       <AboutCoin coinData={coinData} />
+      <CoinNews
+        coinNews={coinNews}
+        coinName={id}
+        coinImage={coinData?.image.large}
+      />
+      <CoinLineGraph graphData={graphData} />
       <TrendingCoins />
     </SCryptoDashboard>
   );

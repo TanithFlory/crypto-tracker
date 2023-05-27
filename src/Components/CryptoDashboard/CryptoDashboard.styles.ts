@@ -21,6 +21,13 @@ const SCryptoDashboard = styled.div`
       border-radius: 3px;
     }
   }
+  a {
+    background-color: var(--clr-purple2);
+  }
+  @media screen and (max-width: 956px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 export default SCryptoDashboard;

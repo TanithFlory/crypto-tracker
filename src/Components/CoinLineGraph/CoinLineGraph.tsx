@@ -1,11 +1,11 @@
 import * as d3 from "d3";
 import SCoinLineGraph from "./CoinLineGraph.styles";
 import { useEffect, useState } from "react";
-import { ICoinPrice } from "../../types";
+import { TCoinPrice } from "../../types";
 import useWindowDimensions from "../../CustomHooks/useWindowDimensions";
 
 interface IProps {
-  graphData: ICoinPrice[];
+  graphData: TCoinPrice[];
 }
 
 const CoinLineGraph = (props: IProps) => {

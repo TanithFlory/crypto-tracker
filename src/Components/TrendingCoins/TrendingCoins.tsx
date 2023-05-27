@@ -22,7 +22,7 @@ const TrendingCoins = () => {
             <img src={d.item.large} alt="coin" />
             <div>
               <h3>{d.item.name}</h3>
-              <span>Market Cap RanK: {d.item.market_cap_rank}</span>
+              <span>Market Cap Rank: {d.item.market_cap_rank}</span>
             </div>
           </Link>
         );

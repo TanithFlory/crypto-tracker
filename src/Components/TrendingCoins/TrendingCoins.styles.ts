@@ -9,6 +9,7 @@ const STrendingCoins = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  border-radius: 12px;
   img {
     width: 80px;
     aspect-ratio: 1/1;
@@ -18,9 +19,9 @@ const STrendingCoins = styled.div`
     align-self: center;
     gap: 1rem;
     text-decoration: none;
-    padding: 10px;
+    padding: 10px 32px;
     margin-bottom: 1rem;
-    color: var(--clr-text1);
+    color: var(--clr-text2);
     border: 1px solid transparent;
     border-radius: 8px;
     &:hover {
@@ -33,7 +34,7 @@ const STrendingCoins = styled.div`
   }
 
   span {
-    color: var(--clr-text2);
+    color: var(--clr-text3);
   }
   div {
     display: flex;
