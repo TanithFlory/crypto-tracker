@@ -5,6 +5,7 @@ import Speed from "../../assets/speed.svg";
 import Defi from "../../assets/defi.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import useAos from "../../CustomHooks/useAos";
 
 const benefits = [
   {
@@ -28,12 +29,8 @@ const benefits = [
 ];
 
 const CryptoBenefits = () => {
-  useEffect(() => {
-    AOS.init({
-      once: true,
-    });
-    AOS.refresh();
-  }, []);
+  useAos();
+
   return (
     <SCryptoBenefits>
       {benefits.map((benefit, index) => (

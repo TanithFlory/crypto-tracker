@@ -1,14 +1,14 @@
 import { styled } from "styled-components";
 
 const STrendingCoins = styled.div`
-  grid-row: 1;
+  grid-row: 1 / span 2;
   grid-column: 4;
-  max-height: 502px;
-  overflow-y: scroll;
+  overflow: hidden;
   background-color: var(--clr-purple);
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 550px;
   border-radius: 12px;
   img {
     width: 80px;
@@ -16,10 +16,13 @@ const STrendingCoins = styled.div`
   }
   a {
     display: flex;
+    justify-content: center;
     align-self: center;
     gap: 1rem;
     text-decoration: none;
-    padding: 10px 32px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
     margin-bottom: 1rem;
     color: var(--clr-text2);
     border: 1px solid transparent;
@@ -40,6 +43,7 @@ const STrendingCoins = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
   }
 `;
 

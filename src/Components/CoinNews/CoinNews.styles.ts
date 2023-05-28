@@ -5,6 +5,7 @@ const SCoinNews = styled.div`
   width: 100%;
   height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
   max-height: 502px;
   background-color: var(--clr-purple);
   border-radius: 12px;

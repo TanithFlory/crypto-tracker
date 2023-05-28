@@ -1,19 +1,47 @@
 import { styled } from "styled-components";
 
 const SCoinLineGraph = styled.div`
-  grid-column: 1 / span 4;
+  grid-column: 1 / span 3;
   background-color: var(--clr-purple);
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  & > :first-child {
+    display: flex;
+    justify-content: center;
+    h1 {
+      align-self: center;
+    }
+  }
   & > :nth-child(2) {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    & > :first-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h2 {
+        font-size: var(--fs-l);
+      }
+      h3 {
+        font-size: var(--fs-m);
+      }
+    }
   }
   .coin_24h-status {
     display: flex;
     gap: 1rem;
     margin-right: 1rem;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
   h1,
   h4,
@@ -55,7 +83,7 @@ const SCoinLineGraph = styled.div`
   .visible {
     opacity: 1;
   }
-/* 
+  /* 
   @-webkit-keyframes pulse {
     0% {
       background: rgba(255, 255, 255, 0.3);
@@ -81,6 +109,12 @@ const SCoinLineGraph = styled.div`
         0px 0px 15px 2px rgba(0, 255, 135, 1);
     }
   } */
+  @media screen and (max-width: 400px) {
+    & > :nth-child(2) {
+      justify-content: center;
+    }
+    width: auto;
+  }
 `;
 
 export default SCoinLineGraph;

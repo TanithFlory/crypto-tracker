@@ -9,20 +9,26 @@ export type TCoinPrice = [Date, number];
 
 export interface IAboutCoin {
   name: string;
+  symbol: string;
+  market_cap_rank: number;
+  hashing_algorithm: string;
   image: {
     large: string;
-  };
-  market_data: {
-    current_price: {
-      usd: number;
-    };
   };
   description: {
     en: string;
   };
-  symbol: string;
-  market_cap_rank: number;
-  hashing_algorithm: string;
+  market_data: {
+    high_24h: {
+      usd: number;
+    };
+    current_price: {
+      usd: number;
+    };
+    market_cap: {
+      usd: number;
+    };
+  };
   links: {
     homepage: string[];
     blockchain_site: string[];
@@ -31,6 +37,11 @@ export interface IAboutCoin {
       github: string[];
     };
   };
+  tickers: [
+    {
+      volume: number;
+    }
+  ];
 }
 
 export interface ICoinNews {

@@ -36,6 +36,7 @@
   );
   --fs-custom: 4rem;
   --fs-xxl: 3rem;
+  --fs-xl: 2rem;
   --fs-l: 1.5rem;
   --fs-m: 1.3rem;
   --fs-s: 1rem;
@@ -53,5 +54,6 @@ html {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
   align-self: center;
 }

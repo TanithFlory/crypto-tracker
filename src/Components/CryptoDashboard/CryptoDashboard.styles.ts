@@ -5,8 +5,8 @@ const SCryptoDashboard = styled.div`
   display: grid;
   padding: 6rem 2rem 1rem;
   grid-template-columns: repeat(4, 1fr);
-  place-content: center;
-  place-items: center;
+  place-content: end;
+  place-items: start;
   gap: 2rem;
 
   .custom-scroll {
@@ -24,9 +24,14 @@ const SCryptoDashboard = styled.div`
   a {
     background-color: var(--clr-purple2);
   }
-  @media screen and (max-width: 956px) {
+  @media screen and (max-width: 1023px) {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    padding: 5px;
+    & > div {
+      padding: 5px;
+    }
   }
 `;
 

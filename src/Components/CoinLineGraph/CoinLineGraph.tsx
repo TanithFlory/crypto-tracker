@@ -1,11 +1,12 @@
 import * as d3 from "d3";
 import SCoinLineGraph from "./CoinLineGraph.styles";
 import { useEffect, useState } from "react";
-import { TCoinPrice } from "../../types";
+import { IAboutCoin, TCoinPrice } from "../../types";
 import useWindowDimensions from "../../CustomHooks/useWindowDimensions";
 
 interface IProps {
   graphData: TCoinPrice[];
+  coinData: IAboutCoin | undefined;
 }
 
 const CoinLineGraph = (props: IProps) => {
@@ -153,28 +154,37 @@ const CoinLineGraph = (props: IProps) => {
       d3.select(ref).select("svg").remove();
     };
   }, [ref, props.graphData, width]);
+
+  const formatNumber = (n: number) => {
+    if (n >= 1e9) return `${(n / 1e9).toFixed(2)} Billion`;
+    if (n >= 1e6) return `${(n / 1e6).toFixed(2)} Million`;
+  };
   return (
     <SCoinLineGraph ref={setRef}>
       <div>
-        <h1>Coin Chart</h1>
+        <h1 className="gradient-text">Coin Chart</h1>
       </div>
       <div>
         <div>
           <h3>Price</h3>
-          <h2>$11,000</h2>
+          <h2>{props.coinData?.market_data.current_price?.usd}$</h2>
         </div>
         <div className="coin_24h-status">
           <div>
-            <h4>24h% change</h4>
-            <span>1.64%</span>
+            <h4>24h high</h4>
+            <span>{props.coinData?.market_data.high_24h?.usd}</span>
           </div>
           <div>
             <h4>Volume 24h</h4>
-            <span>47B</span>
+            <span>{props.coinData?.tickers[0].volume.toFixed(2)}</span>
           </div>
           <div>
             <h4>Market Cap</h4>
-            <span>21B</span>
+            <span>
+              {formatNumber(
+                props.coinData?.market_data.market_cap?.usd as number
+              )}
+            </span>
           </div>
         </div>
       </div>

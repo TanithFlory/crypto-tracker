@@ -1,5 +1,6 @@
 import SCoinNews from "./CoinNews.styles";
 import { ICoinNews } from "../../types";
+import useAos from "../../CustomHooks/useAos";
 interface IProps {
   coinNews: ICoinNews[];
   coinName: string | undefined;
@@ -7,9 +8,11 @@ interface IProps {
 }
 
 const CoinNews = (props: IProps) => {
+  useAos();
+
   return (
     <SCoinNews className="custom-scroll">
-      <div>
+      <div data-aos="fade-down" data-aos-duration={1000} data-aos-delay={1000}>
         <h1 className="gradient-text">News</h1>
         <p>
           News related to{" "}
@@ -22,7 +25,13 @@ const CoinNews = (props: IProps) => {
         {props.coinNews?.map((d, index) => {
           return (
             d.urlToImage && (
-              <a href={d.url} key={index}>
+              <a
+                href={d.url}
+                key={index}
+                data-aos={index < 3 ? "fade-down" : null}
+                data-aos-duration={index < 3 ? 1000 : null}
+                data-aos-delay={index < 3 ? index * 200 : null}
+              >
                 <div>
                   <img
                     src={d.urlToImage || props.coinImage}

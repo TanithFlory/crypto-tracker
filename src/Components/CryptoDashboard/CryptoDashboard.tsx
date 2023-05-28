@@ -9,12 +9,13 @@ import {
 } from "../../Api/ApiService";
 import { TCoinPrice, IAboutCoin, ICoinNews } from "../../types";
 import AboutCoin from "../AboutCoin/AboutCoin";
-
 import CoinNews from "../CoinNews/CoinNews";
 import TrendingCoins from "../TrendingCoins/TrendingCoins";
-import AOS from "aos";
+import useAos from "../../CustomHooks/useAos";
 
 const CryptoDashboard = () => {
+  useAos();
+
   const { id } = useParams();
   const [graphData, setGraphData] = useState<TCoinPrice[]>([]);
   const [coinData, setCoinData] = useState<IAboutCoin>();
@@ -35,11 +36,6 @@ const CryptoDashboard = () => {
     getData();
   }, [getData, id]);
 
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, [id]);
-
   return (
     <SCryptoDashboard
       data-aos="fade-in"
@@ -52,7 +48,7 @@ const CryptoDashboard = () => {
         coinName={id}
         coinImage={coinData?.image.large}
       />
-      <CoinLineGraph graphData={graphData} />
+      <CoinLineGraph graphData={graphData} coinData={coinData} />
       <TrendingCoins />
     </SCryptoDashboard>
   );

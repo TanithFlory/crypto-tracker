@@ -21,7 +21,11 @@ const TrendingCoins = () => {
           <Link to={`/dashboard/${d.item.id}`} key={d.item.id}>
             <img src={d.item.large} alt="coin" />
             <div>
-              <h3>{d.item.name}</h3>
+              <h3>
+                {d.item.name.length > 16
+                  ? d.item.name.slice(0, 16)
+                  : d.item.name}
+              </h3>
               <span>Market Cap Rank: {d.item.market_cap_rank}</span>
             </div>
           </Link>
