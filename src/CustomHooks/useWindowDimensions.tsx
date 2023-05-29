@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const getWindowDimensions = (): number[] => {
   const { innerWidth: width, innerHeight: height } = window;
-  return width < 912 ? [width/1.2, height / 2] : [width / 1.6, height / 1.8];
+  return width < 1023 ? [width/1.2, height / 2] : [width / 1.7, height / 1.8];
 };
 
 const useWindowDimensions = () => {

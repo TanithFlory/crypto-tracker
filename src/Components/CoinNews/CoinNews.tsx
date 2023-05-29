@@ -1,6 +1,7 @@
 import SCoinNews from "./CoinNews.styles";
 import { ICoinNews } from "../../types";
 import useAos from "../../CustomHooks/useAos";
+import { HiOutlineInformationCircle } from "react-icons/hi";
 interface IProps {
   coinNews: ICoinNews[];
   coinName: string | undefined;
@@ -13,13 +14,10 @@ const CoinNews = (props: IProps) => {
   return (
     <SCoinNews className="custom-scroll">
       <div data-aos="fade-down" data-aos-duration={1000} data-aos-delay={1000}>
-        <h1 className="gradient-text">News</h1>
-        <p>
-          News related to{" "}
-          {`${props.coinName?.charAt(0).toUpperCase()}${props.coinName?.slice(
-            1
-          )}`}
-        </p>
+        <h1 className="gradient-text">News </h1>
+        <span>
+          <HiOutlineInformationCircle />
+        </span>
       </div>
       <div>
         {props.coinNews?.map((d, index) => {

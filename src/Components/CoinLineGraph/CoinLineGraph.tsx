@@ -156,9 +156,12 @@ const CoinLineGraph = (props: IProps) => {
   }, [ref, props.graphData, width]);
 
   const formatNumber = (n: number) => {
+    if (n >= 1e12) return `${(n / 1e12).toFixed(2)} Trillion`;
     if (n >= 1e9) return `${(n / 1e9).toFixed(2)} Billion`;
     if (n >= 1e6) return `${(n / 1e6).toFixed(2)} Million`;
+    return n?.toFixed(2);
   };
+
   return (
     <SCoinLineGraph ref={setRef}>
       <div>
@@ -176,7 +179,9 @@ const CoinLineGraph = (props: IProps) => {
           </div>
           <div>
             <h4>Volume 24h</h4>
-            <span>{props.coinData?.tickers[0].volume.toFixed(2)}</span>
+            <span>
+              {formatNumber(props.coinData?.tickers[0].volume as number)}
+            </span>
           </div>
           <div>
             <h4>Market Cap</h4>

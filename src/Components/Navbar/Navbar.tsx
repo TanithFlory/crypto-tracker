@@ -9,7 +9,15 @@ const Navbar = () => {
         {["Home", "About", "Coins", "Prices"].map((d, index) => {
           return (
             <li key={`nav-option-${index}`}>
-              <Link to={`${d.toLowerCase()}`}>{d}</Link>
+              <Link
+                to={
+                  d === "Coins" || d === "Prices"
+                    ? `/${d.toLowerCase()}/1`
+                    : `/${d.toLowerCase()}`
+                }
+              >
+                {d}
+              </Link>
             </li>
           );
         })}

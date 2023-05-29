@@ -11,7 +11,32 @@ const SCoinNews = styled.div`
   border-radius: 12px;
   & > div:first-child {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    & > span {
+      height: 28px;
+      width: 28px;
+      position: relative;
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+      &:hover::after {
+        content: "Articles may be irrelevant.";
+        white-space: pre;
+        padding: 5px;
+        border-radius: 5px;
+        width: 200px;
+        position: absolute;
+        background-color: var(--clr-text2);
+        color: var(--clr-text1);
+        font-weight: 700;
+        right: -50px;
+        top: 0px;
+      }
+    }
   }
   & > div:nth-child(2) {
     display: grid;

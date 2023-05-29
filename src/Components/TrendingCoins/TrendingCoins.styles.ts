@@ -1,6 +1,10 @@
 import { styled } from "styled-components";
+import { Link } from "react-router-dom";
+interface IProps {
+  color?: string;
+}
 
-const STrendingCoins = styled.div`
+export const STrendingCoins = styled.div`
   grid-row: 1 / span 2;
   grid-column: 4;
   overflow: hidden;
@@ -13,38 +17,49 @@ const STrendingCoins = styled.div`
   img {
     width: 80px;
     aspect-ratio: 1/1;
+    object-fit: contain;
   }
-  a {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    gap: 1rem;
-    text-decoration: none;
-    padding: 10px;
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 1rem;
-    color: var(--clr-text2);
-    border: 1px solid transparent;
-    border-radius: 8px;
-    &:hover {
-      border: 1px solid var(--clr-hover);
-    }
-  }
+
   h3 {
     margin: 0;
     align-self: center;
   }
-
-  span {
-    color: var(--clr-text3);
-  }
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
 `;
 
-export default STrendingCoins;
+export const STrendingAnchor = styled(Link)<IProps>`
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  text-decoration: none;
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+  color: var(--clr-text2);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  position: relative;
+
+  overflow: hidden;
+  &:hover {
+    border: 1px solid var(--clr-hover);
+  }
+  & > div:first-child {
+    font-size: var(--fs-custom);
+    color: ${(props) => props.color};
+  }
+  &::after {
+    content: "";
+    font-size: var(--fs-custom);
+    height: 100%;
+    width: 15px;
+    margin-right: 1rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: ${(props) => props.color};
+  }
+`;

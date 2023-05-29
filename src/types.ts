@@ -3,6 +3,7 @@ export interface ICoin {
   image: string;
   name: string;
   current_price: number;
+  market_cap_rank: number;
 }
 
 export type TCoinPrice = [Date, number];
@@ -49,4 +50,13 @@ export interface ICoinNews {
   title: string;
   description: string;
   url: string;
+}
+
+export interface ITrendingCoin {
+  item: {
+    id: string;
+    name: string;
+    large: string;
+    market_cap_rank: number;
+  };
 }

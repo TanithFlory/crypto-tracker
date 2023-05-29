@@ -54,8 +54,10 @@ export const getCoinNews = (id: string | undefined): Promise<any> => {
   return new Promise(async (resolve) => {
     const response = await axios.get(`https://newsapi.org/v2/everything`, {
       params: {
-        q: `${id}`,
+        q: `cryptocurrency ${id}`,
         apiKey: "ea146e65687d429683c310204abc2667",
+        language: "en",
+        sortBy: "relevancy",
       },
     });
     resolve(response.data.articles.slice(0, 15));

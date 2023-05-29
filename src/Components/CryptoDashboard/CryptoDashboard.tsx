@@ -49,7 +49,7 @@ const CryptoDashboard = () => {
         coinImage={coinData?.image.large}
       />
       <CoinLineGraph graphData={graphData} coinData={coinData} />
-      <TrendingCoins />
+      <TrendingCoins numbers={false} />
     </SCryptoDashboard>
   );
 };
