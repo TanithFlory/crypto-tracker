@@ -1,11 +1,8 @@
-import { useEffect } from "react";
 import SCryptoBenefits from "./CryptoBenefits.styles";
-import Security from "../../assets/security.svg";
 import Speed from "../../assets/speed.svg";
 import Defi from "../../assets/defi.svg";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import useAos from "../../CustomHooks/useAos";
+import Security from "../../constants/SVG/Security";
 
 const benefits = [
   {

@@ -2,7 +2,7 @@ import SNavbar from "./Navbar.styles";
 import Language from "./Language/Language";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { images } from "../../constants/images";
+import { HamburgerClose, HamburgerOpen } from "../../constants/SVG/Hamburger";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   return (
@@ -10,12 +10,12 @@ const Navbar = () => {
       <h1>ThorSWAP</h1>
       {!menu && (
         <button onClick={() => setMenu((prev) => !prev)}>
-          <images.hamburger />-
+          <HamburgerOpen />
         </button>
       )}
       {menu && (
         <button onClick={() => setMenu((prev) => !prev)}>
-          <images.hamburger />X
+          <HamburgerClose />
         </button>
       )}
       <ul className={menu ? "animate" : ""}>

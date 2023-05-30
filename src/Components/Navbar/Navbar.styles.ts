@@ -36,8 +36,11 @@ const SNavbar = styled.nav`
     padding: 0;
     li {
       color: var(--clr-text1);
+      transition: 0.3s all ease-in;
+
       &:hover {
         color: var(--clr-text2);
+        transform: scale(1.05);
       }
     }
     & > div {
@@ -59,6 +62,7 @@ const SNavbar = styled.nav`
     }
     ul {
       flex-direction: column;
+      gap: 3rem;
       position: absolute;
       top: 0px;
       right: 0px;
@@ -68,17 +72,17 @@ const SNavbar = styled.nav`
       padding-top: 6rem;
       margin: 0;
       height: 100vh;
-      transition: 0.5s all ease-in;
       transform: translateX(100%);
+      transition: 0.5s all ease-in-out;
       li {
-        border: 3px solid var(--clr-text2);
-        padding: 10px 2rem;
-        border-radius: 12px;
-        transition: 0.3s all ease-in-out;
-        cursor: pointer;
-        &:hover {
-          transform: scale(1.05);
-          color: var(--clr-text2a);
+        a {
+          border: 3px solid var(--clr-text2);
+          padding: 10px 2rem;
+          border-radius: 12px;
+          transition: 0.3s all ease-in-out;
+          cursor: pointer;
+          &:hover {
+          }
         }
       }
     }
