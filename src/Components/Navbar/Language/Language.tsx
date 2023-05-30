@@ -4,7 +4,7 @@ import { images } from "../../../constants/images";
 import { useEffect, useState } from "react";
 const Language = () => {
   const [options, setOptions] = useState<boolean>(false);
-  const [languages, setLanguages] = useState<string[]>(["EN", "ES", "HI"]);
+  const [languages, setLanguages] = useState<string[]>(["EN", "ES"]);
   useEffect(() => {
     handleLanguage(navigator.language.slice(0, 2).toUpperCase());
   }, []);
@@ -23,7 +23,7 @@ const Language = () => {
             onClick={() => options && handleLanguage(`${d}`)}
             className={!options && index ? "inactive" : ""}
           >
-            <img src={images[d]} alt="HI" />
+            <img src={images[d]} alt="language" />
             {d}
           </SButton>
         );

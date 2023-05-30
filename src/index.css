@@ -35,6 +35,21 @@
     #3a426c,
     #444e7b
   );
+  --clr-background-opaque: linear-gradient(
+    to right bottom,
+    rgba(17, 18, 40, 0.85),
+    rgba(17, 19, 41, 0.85),
+    rgba(17, 19, 42, 0.85),
+    rgba(16, 20, 43, 0.85),
+    rgba(16, 20, 44, 0.85),
+    rgba(20, 24, 51, 0.85),
+    rgba(24, 29, 57, 0.85),
+    rgba(28, 33, 64, 0.85),
+    rgba(38, 44, 78, 0.85),
+    rgba(48, 55, 93, 0.85),
+    rgba(58, 66, 108, 0.85),
+    rgba(68, 78, 123, 0.85)
+  );
   --clr-green: #10ca6e;
   --fs-custom: 4rem;
   --fs-xxl: 3rem;
@@ -58,4 +73,13 @@ html {
   -webkit-text-fill-color: transparent;
   text-align: center;
   align-self: center;
+}
+
+@media screen and (max-width: 450px) {
+  :root {
+    --fs-custom: 2.5rem;
+    --fs-xxl: 2rem;
+    --fs-l: 1.2rem;
+    --fs-m: 1rem;
+  }
 }

@@ -1,11 +1,8 @@
-import TrendingCoins from "../Components/TrendingCoins/TrendingCoins";
-import CoinGrid from "../Components/CoinGrid/CoinGrid";
 import { styled } from "styled-components";
-import useAos from "../CustomHooks/useAos";
 const SCoin = styled.div`
   display: grid;
   grid-template-columns: 1fr 30%;
-  padding: 6rem 2rem;
+  padding: 6.5rem 2rem;
   gap: 1rem;
   & > div:nth-child(2) {
     grid-column: 2;
@@ -37,15 +34,5 @@ const SCoin = styled.div`
     }
   }
 `;
-const Coins = () => {
-  useAos();
 
-  return (
-    <SCoin data-aos="fade-zoom-in" data-aos-duration="2000">
-      <CoinGrid />
-      <TrendingCoins numbers={true} />
-    </SCoin>
-  );
-};
-
-export default Coins;
+export default SCoin;

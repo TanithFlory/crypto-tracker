@@ -7,6 +7,7 @@ const SCryptoBenefits = styled.div`
   background: var(--clr-background);
   & > div {
     display: flex;
+    justify-content: center;
     gap: 3rem;
     max-width: 1100px;
     margin-bottom: 3rem;
@@ -16,7 +17,7 @@ const SCryptoBenefits = styled.div`
     h1 {
       font-size: var(--fs-xxl);
       margin: 0;
-      align-self:center;
+      align-self: center;
     }
     p {
       text-align: center;
@@ -27,6 +28,29 @@ const SCryptoBenefits = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  @media screen and (max-width: 1023px) {
+    & > div {
+      flex-wrap: wrap;
+      max-width: 500px;
+      p {
+        margin-bottom: 0;
+        padding: 10px;
+      }
+      &::after {
+        content: "";
+        width: 100vw;
+        height: 6px;
+        background-color: white;
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    & > div {
+      svg {
+        width: 270px;
+      }
+    }
   }
 `;
 

@@ -33,12 +33,19 @@ const SCoinGrid = styled.div`
         top: 5px;
         left: 5px;
         font-size: var(--fs-s);
-        width: 40px;
+        width: 50px;
         height: 25px;
         border-radius: 6px;
         padding: 5px;
         text-align: center;
         font-weight: 700;
+        display: flex;
+        align-items: center;
+        svg {
+          width: 100%;
+          height: 100%;
+          animation: spin 10s linear infinite;
+        }
       }
     }
     span {
@@ -65,6 +72,14 @@ const SCoinGrid = styled.div`
     }
     100% {
       transform: rotateY(360deg);
+    }
+  }
+  @keyframes spin {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: rotateZ(360deg);
     }
   }
 `;

@@ -57,6 +57,17 @@ const SSearch = styled.div`
       }
     }
   }
+  @media screen and (max-width: 600px) {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    padding: 3px;
+    input,
+    input::placeholder {
+      font-size: calc(var(--fs-s) - 0.2rem);
+    }
+  }
 `;
 
 export default SSearch;

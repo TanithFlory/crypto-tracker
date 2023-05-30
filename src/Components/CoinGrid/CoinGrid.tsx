@@ -3,6 +3,7 @@ import SCoinGrid from "./CoinGrid.styles";
 import { CryptoDataContext } from "../../Contexts/CryptoDataContext";
 import { Link, useParams } from "react-router-dom";
 import CoinGridNavigation from "./CoinGridNavigation";
+import { images } from "../../constants/images";
 
 const CoinGrid = () => {
   const coinData = useContext(CryptoDataContext);
@@ -18,7 +19,10 @@ const CoinGrid = () => {
           return (
             <Link to={`/dashboard/${d.id}`} key={`coin-${index}`}>
               <div>
-                <div>#{d.market_cap_rank}</div>
+                <div>
+                  <images.star />
+                  <span> {d.market_cap_rank}</span>
+                </div>
                 <h2 className="gradient-text">{d.name}</h2>
                 <img src={d.image} alt="coin" />
                 <span>

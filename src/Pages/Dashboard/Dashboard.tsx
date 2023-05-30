@@ -1,4 +1,4 @@
-import CryptoDashboard from "../Components/CryptoDashboard/CryptoDashboard";
+import CryptoDashboard from "../../Components/CryptoDashboard/CryptoDashboard";
 
 const Dashboard = () => {
   return <CryptoDashboard />;

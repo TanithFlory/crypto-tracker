@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./Pages/Home";
-import Dashboard from "./Pages/Dashboard";
-import Coins from "./Pages/Coins";
+import Home from "./Pages/Home/Home";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Coins from "./Pages/Coins/Coins";
 import Navbar from "./Components/Navbar/Navbar";
 import { useState, useCallback, useEffect } from "react";
 import { ICoin } from "./types";
