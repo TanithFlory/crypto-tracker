@@ -116,6 +116,7 @@ export const SSocialAnchor = styled(Link)`
   text-decoration: none;
   color: var(--clr-black);
   min-height: 70px;
+  transition: all 0.5s ease 0s;
   svg {
     transform: scale(2.5);
     fill: ${(props) =>

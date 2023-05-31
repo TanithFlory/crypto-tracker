@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IAboutCoin, ICoin, TCoinPrice } from "../types";
+import { IAboutCoin, ICoin, TCoinPrice, ICoinNews } from "../types";
 
 export const getBasicCoinData = (): Promise<ICoin[]> => {
   let i = 1;
@@ -50,7 +50,7 @@ export const getCoinData = (id: string | undefined): Promise<IAboutCoin> => {
   });
 };
 
-export const getCoinNews = (id: string | undefined): Promise<any> => {
+export const getCoinNews = (id: string | undefined): Promise<ICoinNews[]> => {
   return new Promise(async (resolve) => {
     const response = await axios.get(`https://newsapi.org/v2/everything`, {
       params: {
