@@ -47,12 +47,12 @@ const Socials = () => {
     },
   ];
   return (
-    <SSocials>
+    <SSocials className="socials">
       <div>
         <h1>Join our community</h1>
         <p>
-          Learn more about Lido, chat with us and have your say in the future of
-          the Lido ecosystem
+          Learn more about Cryptocurrency, chat with others, contact us to learn
+          more. Follow us for more information.
         </p>
       </div>
       <div>

@@ -5,6 +5,14 @@ import { useState } from "react";
 import { HamburgerClose, HamburgerOpen } from "../../constants/SVG/Hamburger";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
+  const scrollAbout = (): void => {
+    setMenu(true);
+    const aboutUs = document.getElementsByClassName("socials")[0];
+    aboutUs.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
   return (
     <SNavbar>
       <h1>ThorSWAP</h1>
@@ -23,11 +31,15 @@ const Navbar = () => {
           return (
             <li key={`nav-option-${index}`}>
               <Link
-                onClick={() => setMenu((prev) => !prev)}
+                onClick={
+                  d === "About"
+                    ? () => scrollAbout()
+                    : () => setMenu((prev) => !prev)
+                }
                 to={
                   d === "Coins" || d === "Prices"
-                    ? `/${d.toLowerCase()}/1`
-                    : `/${d.toLowerCase()}`
+                    ? `/crypto-tracker/${d.toLowerCase()}/1`
+                    : `/crypto-tracker/${d.toLowerCase()}`
                 }
               >
                 {d}

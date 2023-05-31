@@ -22,7 +22,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route
-          path="/"
+          path="/crypto-tracker"
           element={
             <CryptoDataContext.Provider value={coins}>
               <Home />
@@ -30,16 +30,16 @@ function App() {
           }
         />
         <Route
-          path="home"
+          path="/crypto-tracker/home"
           element={
             <CryptoDataContext.Provider value={coins}>
               <Home />
             </CryptoDataContext.Provider>
           }
         />
-        <Route path="/dashboard/:id" element={<Dashboard />} />
+        <Route path="/crypto-tracker/dashboard/:id" element={<Dashboard />} />
         <Route
-          path="/coins/:page"
+          path="/crypto-tracker/coins/:page"
           element={
             <CryptoDataContext.Provider value={coins}>
               <Coins />
@@ -47,13 +47,14 @@ function App() {
           }
         />
         <Route
-          path="/prices/:page"
+          path="/crypto-tracker/prices/:page"
           element={
             <CryptoDataContext.Provider value={coins}>
               <Coins />
             </CryptoDataContext.Provider>
           }
         />
+        <Route path="*" element={<Home />} />
       </Routes>
     </>
   );
