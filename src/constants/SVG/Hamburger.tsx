@@ -1,4 +1,5 @@
 /* eslint-disable */
+// @ts-nocheck
 import HamburgerCloseSVG from "../../assets/hamburgerClose.svg";
 import HamburgerOpenSVG from "../../assets/hamburgerOpen.svg";
 import { useEffect } from "react";

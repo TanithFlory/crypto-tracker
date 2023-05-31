@@ -1,4 +1,5 @@
 /* eslint-disable */
+// @ts-nocheck
 import { useEffect } from "react";
 import SecuritySVG from "../../assets/security.svg";
 
