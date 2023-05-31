@@ -29,6 +29,7 @@ const SCryptoDashboard = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     padding: 5px;
+    margin-top: 3rem;
     & > div {
       padding: 5px;
     }

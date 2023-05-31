@@ -39,6 +39,8 @@ const Navbar = () => {
                 to={
                   d === "Coins" || d === "Prices"
                     ? `/crypto-tracker/${d.toLowerCase()}/1`
+                    : d === "About"
+                    ? `#`
                     : `/crypto-tracker/${d.toLowerCase()}`
                 }
               >

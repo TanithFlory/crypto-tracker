@@ -59,6 +59,9 @@ export const getCoinNews = (id: string | undefined): Promise<ICoinNews[]> => {
         language: "en",
         sortBy: "relevancy",
       },
+      headers: {
+        Upgrade: "HTTP/2.0",
+      },
     });
     resolve(response.data.articles.slice(0, 15));
   });

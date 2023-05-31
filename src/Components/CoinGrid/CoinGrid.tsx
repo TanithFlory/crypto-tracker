@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import SCoinGrid from "./CoinGrid.styles";
 import { CryptoDataContext } from "../../Contexts/CryptoDataContext";
 import { Link, useParams } from "react-router-dom";
