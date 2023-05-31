@@ -12,7 +12,7 @@ const CoinGridNavigation = (props: IProps) => {
   return (
     <SCoinGridNavigation>
       <div>
-        <Link to={`/coins/1`}>
+        <Link to={`/crypto-tracker/coins/1`}>
           <BsSkipStartCircle />
         </Link>
       </div>
@@ -23,8 +23,8 @@ const CoinGridNavigation = (props: IProps) => {
         <Link
           to={
             props.pageNumber === 1
-              ? `/coins/${props.coinData.length / 30}`
-              : `/coins/${props.pageNumber - 1}`
+              ? `/crypto-tracker/coins/${props.coinData.length / 30}`
+              : `/crypto-tracker/coins/${props.pageNumber - 1}`
           }
         >
           <AiOutlineDoubleLeft />
@@ -32,8 +32,8 @@ const CoinGridNavigation = (props: IProps) => {
         <Link
           to={
             props.pageNumber === props.coinData.length / 30
-              ? `/coins/1`
-              : `/coins/${props.pageNumber + 1}`
+              ? `/crypto-tracker/coins/1`
+              : `/crypto-tracker/coins/${props.pageNumber + 1}`
           }
         >
           <AiOutlineDoubleRight />
