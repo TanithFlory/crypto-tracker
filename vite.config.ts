@@ -10,4 +10,5 @@ export default defineConfig({
       svgrOptions: { svgo: true },
     }),
   ],
+  base: '/crypto-tracker',
 });

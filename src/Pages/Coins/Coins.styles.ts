@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 const SCoin = styled.div`
   display: grid;
-  grid-template-columns: 1fr 30%;
+  grid-template-columns: 1fr 400px;
   padding: 6.5rem 2rem;
   gap: 1rem;
   & > div:nth-child(2) {

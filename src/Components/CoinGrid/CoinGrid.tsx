@@ -8,7 +8,7 @@ import { images } from "../../constants/images";
 const CoinGrid = () => {
   const coinData = useContext(CryptoDataContext);
   const { page } = useParams();
-  const pageNumber: number = Number(page);
+  const pageNumber: number = Number(page) || 1;
 
   return (
     <SCoinGrid>
