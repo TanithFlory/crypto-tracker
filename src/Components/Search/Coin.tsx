@@ -36,7 +36,7 @@ const SCoin = styled(Link)`
 
 const Coin = (props: CoinProps) => {
   return (
-    <SCoin key={props.d.id} to={`/dashboard/${props.d.id}`}>
+    <SCoin key={props.d.id} to={`/crypto-tracker/dashboard/${props.d.id}`}>
       <div>
         <img src={props.d.image} />
         <h4>{props.d.name}</h4>
