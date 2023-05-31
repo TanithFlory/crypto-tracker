@@ -17,7 +17,10 @@ const CoinGrid = () => {
         .slice(pageNumber * 30 - 30, pageNumber * 30)
         .map((d, index: number) => {
           return (
-            <Link to={`/dashboard/${d.id}`} key={`coin-${index}`}>
+            <Link
+              to={`/crypto-tracker/dashboard/${d.id}`}
+              key={`coin-${index}`}
+            >
               <div>
                 <div>
                   <images.star />
