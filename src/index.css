@@ -50,6 +50,7 @@
     rgba(58, 66, 108, 0.85),
     rgba(68, 78, 123, 0.85)
   );
+  --clr-blue: #4db8d6;
   --clr-green: #10ca6e;
   --fs-custom: 4rem;
   --fs-xxl: 3rem;

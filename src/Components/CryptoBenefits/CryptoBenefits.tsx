@@ -1,9 +1,8 @@
 import SCryptoBenefits from "./CryptoBenefits.styles";
-import Speed from "../../assets/speed.svg";
 import Defi from "../../assets/defi.svg";
 import useAos from "../../CustomHooks/useAos";
 import Security from "../../constants/SVG/Security";
-
+import Speed from "../../constants/SVG/Speed";
 const benefits = [
   {
     icon: <Defi />,

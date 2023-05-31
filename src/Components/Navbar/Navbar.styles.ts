@@ -87,7 +87,6 @@ const SNavbar = styled.nav`
       }
     }
     .animate {
-      animation: slideInFromRight 0.5s ease-in-out;
       transform: translateX(0);
     }
   }
