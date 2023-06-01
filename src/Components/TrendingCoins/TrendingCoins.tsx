@@ -23,7 +23,7 @@ const TrendingCoins = (props: IProps) => {
       {trendingCoin?.map((d, index: number) => {
         return (
           <STrendingAnchor
-            to={`/crypto-tracker/dashboard/${d.item.id}`}
+            to={`/dashboard/${d.item.id}`}
             key={d.item.id}
             color={
               index === 0

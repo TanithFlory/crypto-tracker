@@ -24,6 +24,7 @@ export const SButton = styled.button<ButtonProps>`
   position: absolute;
   top: ${(props): string => `${props.gap}px`};
   border-radius: 5px;
+  border: 2px solid transparent;
   img {
     width: 30px;
   }

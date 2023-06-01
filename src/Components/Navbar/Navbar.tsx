@@ -5,13 +5,21 @@ import { useState } from "react";
 import { HamburgerClose, HamburgerOpen } from "../../constants/SVG/Hamburger";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
-  const scrollAbout = (): void => {
+  const scrollHandler = (type: string): void => {
     setMenu(true);
-    const aboutUs = document.getElementsByClassName("socials")[0];
-    aboutUs.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+
+    if (type === "Home") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      const aboutUs = document.getElementsByClassName("socials")[0];
+      aboutUs.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
   return (
     <SNavbar>
@@ -33,7 +41,9 @@ const Navbar = () => {
               <Link
                 onClick={
                   d === "About"
-                    ? () => scrollAbout()
+                    ? () => scrollHandler("About")
+                    : d === "Home"
+                    ? () => scrollHandler("Home")
                     : () => setMenu((prev) => !prev)
                 }
                 to={d === "About" ? `#` : `/${d.toLowerCase()}`}
