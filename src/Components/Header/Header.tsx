@@ -37,7 +37,16 @@ const Header = () => {
             <Search className="search-menu" toggleMenu={toggleSearchMenu} />
           )}
         </div>
-        <button>
+        <button
+          onClick={() => {
+            const aboutUs =
+              document.getElementsByClassName("crypto-benefits")[0];
+            aboutUs.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }}
+        >
           Learn More <BsChevronDown />
         </button>
       </div>

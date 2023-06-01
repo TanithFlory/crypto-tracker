@@ -1,13 +1,11 @@
 import SNavbar from "./Navbar.styles";
 import Language from "./Language/Language";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { HamburgerClose, HamburgerOpen } from "../../constants/SVG/Hamburger";
+import { useEffect, useState } from "react";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const scrollHandler = (type: string): void => {
     setMenu(true);
-
     if (type === "Home") {
       window.scrollTo({
         top: 0,
@@ -21,6 +19,25 @@ const Navbar = () => {
       });
     }
   };
+
+  useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
+    const handleNavbar = () => {
+      const navbar = document.querySelector("nav");
+      const currentScrollPos = window.pageYOffset;
+      if (prevScrollPos < currentScrollPos && window.innerWidth > 1023) {
+        navbar?.classList.add("offScreen");
+      } else {
+        navbar?.classList.remove("offScreen");
+      }
+      prevScrollPos = currentScrollPos;
+    };
+    window.addEventListener("scroll", handleNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", handleNavbar);
+    };
+  }, []);
   return (
     <SNavbar>
       <Link to={"/"}>

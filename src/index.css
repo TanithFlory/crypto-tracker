@@ -76,16 +76,20 @@ html {
   align-self: center;
 }
 
-.skeleton{
+.skeleton {
   animation: skeleton-loading 0.5s linear alternate;
 }
 @keyframes skeleton-loading {
-  0%{
-    background-color: hsl(200,20%,70%);
+  0% {
+    background-color: hsl(200, 20%, 70%);
   }
-  100%{
-    background-color: hsl(200,20%,95%);
+  100% {
+    background-color: hsl(200, 20%, 95%);
   }
+}
+
+.offScreen {
+  transform: translateY(-100px);
 }
 
 @media screen and (max-width: 450px) {

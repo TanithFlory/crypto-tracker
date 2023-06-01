@@ -28,7 +28,7 @@ const CryptoBenefits = () => {
   useAos();
 
   return (
-    <SCryptoBenefits>
+    <SCryptoBenefits className="crypto-benefits">
       {benefits.map((benefit, index) => (
         <div
           key={index}

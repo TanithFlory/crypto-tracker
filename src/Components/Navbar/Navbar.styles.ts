@@ -10,6 +10,7 @@ const SNavbar = styled.nav`
   gap: 10rem;
   z-index: 9999;
   background: var(--clr-background-opaque);
+  transition: 0.4s all linear;
   a {
     text-decoration: none;
     color: var(--clr-text2);
