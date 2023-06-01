@@ -10,6 +10,10 @@ const SNavbar = styled.nav`
   gap: 10rem;
   z-index: 9999;
   background: var(--clr-background-opaque);
+  a {
+    text-decoration: none;
+    color: var(--clr-text2);
+  }
   & > button {
     display: none;
     position: absolute;

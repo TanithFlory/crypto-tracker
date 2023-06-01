@@ -23,7 +23,9 @@ const Navbar = () => {
   };
   return (
     <SNavbar>
-      <h1>ThorSWAP</h1>
+      <Link to={"/"}>
+        <h1>CryptoTracker</h1>
+      </Link>
       {!menu && (
         <button onClick={() => setMenu((prev) => !prev)}>
           <HamburgerOpen />

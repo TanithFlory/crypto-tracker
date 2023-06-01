@@ -60,7 +60,7 @@ const Socials = () => {
           <div>
             <BsDiscord />
             <div>
-              <h3>ThorSWAP on Discord</h3>
+              <h3>CryptoTracker on Discord</h3>
               <p>Ask questions on our channels.</p>
             </div>
           </div>

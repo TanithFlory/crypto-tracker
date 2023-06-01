@@ -80,7 +80,7 @@ const Footer = () => {
         })}
       </SFooter>
       <SFooterTradeMark>
-        <h3>ThorSWAP</h3>
+        <h3>CryptoTracker</h3>
         <span>Privacy Policy</span>
         <span>Terms & Conditions</span>
       </SFooterTradeMark>
