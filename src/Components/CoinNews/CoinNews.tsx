@@ -23,13 +23,7 @@ const CoinNews = (props: IProps) => {
         {props.coinNews?.map((d, index) => {
           return (
             d.urlToImage && (
-              <a
-                href={d.url}
-                key={index}
-                data-aos={index < 3 ? "fade-down" : null}
-                data-aos-duration={index < 3 ? 1000 : null}
-                data-aos-delay={index < 3 ? index * 200 : null}
-              >
+              <a href={d.url} key={index}>
                 <div>
                   <img
                     src={d.urlToImage || props.coinImage}

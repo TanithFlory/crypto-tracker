@@ -33,6 +33,7 @@ export const SFooter = styled.div`
 
 export const SFooterTradeMark = styled.div`
   display: flex;
+  justify-content: center;
   gap: 1rem;
   align-items: center;
   max-width: 1200px;

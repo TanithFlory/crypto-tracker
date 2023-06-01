@@ -26,16 +26,11 @@ const Navbar = () => {
       <Link to={"/"}>
         <h1>CryptoTracker</h1>
       </Link>
-      {!menu && (
-        <button onClick={() => setMenu((prev) => !prev)}>
-          <HamburgerOpen />
-        </button>
-      )}
-      {menu && (
-        <button onClick={() => setMenu((prev) => !prev)}>
-          <HamburgerClose />
-        </button>
-      )}
+      <button onClick={() => setMenu((prev) => !prev)}>
+        <div className={`menu-line ${menu && "cross45"}`} />
+        <div className={`menu-line ${menu && "opacity-0"}`} />
+        <div className={`menu-line ${menu && "cross-45"}`} />
+      </button>
       <ul className={menu ? "animate" : ""}>
         {["Home", "About", "Coins", "Prices"].map((d, index) => {
           return (

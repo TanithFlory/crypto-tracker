@@ -17,15 +17,16 @@ const SNavbar = styled.nav`
   & > button {
     display: none;
     position: absolute;
-    right: 25px;
+    right: 18px;
     top: 20px;
-    background-color: transparent;
+    background: transparent;
     width: 50px;
     height: 60px;
     box-sizing: content-box;
     z-index: 9999;
     border: none;
     cursor: pointer;
+
     svg {
       width: 100%;
       height: 100%;
@@ -55,8 +56,23 @@ const SNavbar = styled.nav`
       text-decoration: none;
     }
   }
+  .menu-line {
+    background-color: #5772e8;
+    height: 3px;
+    width: 90%;
+    margin: 10px 0;
+    transition: 0.5s all linear;
+  }
+  .cross-45 {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  .cross45 {
+    transform: translateY(16px) rotate(45deg);
+  }
+  .opacity-0 {
+    opacity: 0;
+  }
   @media screen and (max-width: 1023px) {
-    background: transparent;
     justify-content: flex-start;
     h1 {
       margin-left: 4rem;
@@ -73,7 +89,7 @@ const SNavbar = styled.nav`
       width: 100%;
       max-width: 250px;
       background: var(--clr-background-opaque);
-      padding-top: 6rem;
+      padding-top: 6.5rem;
       margin: 0;
       height: 100vh;
       transform: translateX(100%);

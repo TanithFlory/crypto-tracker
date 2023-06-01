@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 const SCryptoDashboard = styled.div`
   background: var(--clr-background);
   display: grid;
-  padding: 6rem 2rem 1rem;
+  padding: 7rem 2rem 1rem;
   grid-template-columns: repeat(4, 1fr);
   place-content: end;
   place-items: start;
@@ -28,8 +28,7 @@ const SCryptoDashboard = styled.div`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 5px;
-    margin-top: 3rem;
+    padding: 6rem 5px 0;
     & > div {
       padding: 5px;
     }

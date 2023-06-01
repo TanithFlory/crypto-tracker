@@ -12,7 +12,11 @@ const AboutCoin = (props: IProps) => {
         <h1 className="gradient-text">About {props.coinData?.name}</h1>
       </div>
       <div>
-        <img src={props.coinData?.image.large} alt="coin" />
+        <img
+          className="skeleton"
+          src={props.coinData?.image.large}
+          alt="coin"
+        />
         <div>
           <h4>{props.coinData?.name}</h4>
           <p>

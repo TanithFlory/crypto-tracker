@@ -76,6 +76,18 @@ html {
   align-self: center;
 }
 
+.skeleton{
+  animation: skeleton-loading 0.5s linear alternate;
+}
+@keyframes skeleton-loading {
+  0%{
+    background-color: hsl(200,20%,70%);
+  }
+  100%{
+    background-color: hsl(200,20%,95%);
+  }
+}
+
 @media screen and (max-width: 450px) {
   :root {
     --fs-custom: 2.5rem;

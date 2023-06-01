@@ -8,7 +8,9 @@ import {
 } from "react-icons/bs";
 import { ImMail4, ImBlogger2 } from "react-icons/im";
 import { images } from "../../constants/images";
+import useAos from "../../CustomHooks/useAos";
 const Socials = () => {
+  useAos();
   const socials = [
     {
       icon: <BsTelegram />,
@@ -47,7 +49,11 @@ const Socials = () => {
     },
   ];
   return (
-    <SSocials className="socials">
+    <SSocials
+      className="socials"
+      data-aos="fade-in"
+      data-aos-duration="1500"
+    >
       <div>
         <h1>Join our community</h1>
         <p>

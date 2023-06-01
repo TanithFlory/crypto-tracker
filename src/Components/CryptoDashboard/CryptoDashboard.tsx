@@ -39,7 +39,7 @@ const CryptoDashboard = () => {
   return (
     <SCryptoDashboard
       data-aos="fade-in"
-      data-aos-duration="1500"
+      data-aos-duration="2000"
       data-aos-delay="500"
     >
       <AboutCoin coinData={coinData} />

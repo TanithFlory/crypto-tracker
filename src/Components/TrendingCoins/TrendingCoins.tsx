@@ -36,7 +36,7 @@ const TrendingCoins = (props: IProps) => {
             }
           >
             {props.numbers && <div>{index + 1}</div>}
-            <img src={d.item.large} alt="coin" />
+            <img className="skeleton" src={d.item.large} alt="coin" />
             <div>
               <h3>
                 {d.item.name.length > 16

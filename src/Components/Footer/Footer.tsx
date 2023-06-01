@@ -1,6 +1,8 @@
 import { SFooter, SFooterTradeMark } from "./Footer.styles";
+import useAos from "../../CustomHooks/useAos";
 
 const Footer = () => {
+  useAos();
   const footerLinks = [
     {
       title: "Lorem ipsum",
@@ -65,7 +67,12 @@ const Footer = () => {
 
   return (
     <>
-      <SFooter>
+      <SFooter
+        data-aos="fade-down"
+        data-aos-duration="2000"
+        data-aos-delay="0"
+        data-aos-offset="0"
+      >
         {footerLinks.map((d, index) => {
           return (
             <div key={`footer-${index}`}>
@@ -79,7 +86,12 @@ const Footer = () => {
           );
         })}
       </SFooter>
-      <SFooterTradeMark>
+      <SFooterTradeMark
+        data-aos="fade-right"
+        data-aos-duration="2000"
+        data-aos-offset="0"
+        data-aos-delay="0"
+      >
         <h3>CryptoTracker</h3>
         <span>Privacy Policy</span>
         <span>Terms & Conditions</span>
