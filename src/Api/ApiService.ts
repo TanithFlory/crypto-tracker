@@ -52,17 +52,14 @@ export const getCoinData = (id: string | undefined): Promise<IAboutCoin> => {
 
 export const getCoinNews = (id: string | undefined): Promise<ICoinNews[]> => {
   return new Promise(async (resolve) => {
-    const response = await axios.get(`https://newsapi.org/v2/everything`, {
+    const response = await axios.get(`https://gnews.io/api/v4/search`, {
       params: {
-        q: `cryptocurrency ${id}`,
-        apiKey: "ea146e65687d429683c310204abc2667",
-        language: "en",
-        sortBy: "relevancy",
-      },
-      headers: {
-        Upgrade: "HTTP/2.0",
+        q: `"${id}-crypto"`,
+        apikey: "dabdde799d4f9f81e89ec04e84c52351",
+        lang: "en",
+        max: 10,
       },
     });
-    resolve(response.data.articles.slice(0, 15));
+    resolve(response.data.articles);
   });
 };

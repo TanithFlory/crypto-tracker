@@ -46,7 +46,7 @@ export interface IAboutCoin {
 }
 
 export interface ICoinNews {
-  urlToImage: string;
+  image: string;
   title: string;
   description: string;
   url: string;
