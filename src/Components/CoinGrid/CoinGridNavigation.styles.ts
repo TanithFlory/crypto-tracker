@@ -5,9 +5,12 @@ const SCoinGridNavigation = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  a {
+  button {
     background-color: transparent;
     color: var(--clr-white);
+    outline: none;
+    border: none;
+    cursor: pointer;
   }
   svg {
     fill: var(--clr-white);
@@ -24,7 +27,7 @@ const SCoinGridNavigation = styled.div`
   :last-child {
     display: flex;
     gap: 1rem;
-    & > a {
+    & > button {
       width: 32px;
     }
   }

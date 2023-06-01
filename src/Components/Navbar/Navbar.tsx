@@ -36,13 +36,7 @@ const Navbar = () => {
                     ? () => scrollAbout()
                     : () => setMenu((prev) => !prev)
                 }
-                to={
-                  d === "Coins" || d === "Prices"
-                    ? `/crypto-tracker/${d.toLowerCase()}/1`
-                    : d === "About"
-                    ? `#`
-                    : `/crypto-tracker/${d.toLowerCase()}`
-                }
+                to={d === "About" ? `#` : `/${d.toLowerCase()}`}
               >
                 {d}
               </Link>
