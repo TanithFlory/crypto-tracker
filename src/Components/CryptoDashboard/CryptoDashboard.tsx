@@ -32,24 +32,22 @@ const CryptoDashboard = () => {
   };
 
   const reducer = (state: typeof initialState, action: Action) => {
-    let newState: typeof initialState;
-
     switch (action.type) {
       case "graph":
-        return (newState = {
+        return {
           ...state,
           graph: action.payload as boolean,
-        });
+        };
       case "about":
-        return (newState = {
+        return {
           ...state,
           about: action.payload as boolean,
-        });
+        };
       case "news":
-        return (newState = {
+        return {
           ...state,
           news: action.payload as boolean,
-        });
+        };
       default:
         return initialState;
     }

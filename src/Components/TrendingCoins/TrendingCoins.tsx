@@ -5,7 +5,7 @@ import { ITrendingCoin } from "../../types";
 
 interface IProps {
   numbers: boolean;
-  className: string;
+  className?: string | undefined;
 }
 const TrendingCoins = (props: IProps) => {
   const [trendingCoin, setTrendingCoin] = useState<ITrendingCoin[]>();
