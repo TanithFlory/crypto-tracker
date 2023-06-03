@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useReducer } from "react";
 import { useParams } from "react-router-dom";
 import SCryptoDashboard from "./CryptoDashboard.styles";
 import CoinLineGraph from "../CoinLineGraph/CoinLineGraph";
@@ -12,7 +12,6 @@ import AboutCoin from "../AboutCoin/AboutCoin";
 import CoinNews from "../CoinNews/CoinNews";
 import TrendingCoins from "../TrendingCoins/TrendingCoins";
 import useAos from "../../CustomHooks/useAos";
-
 const CryptoDashboard = () => {
   useAos();
 
@@ -20,6 +19,42 @@ const CryptoDashboard = () => {
   const [graphData, setGraphData] = useState<TCoinPrice[]>([]);
   const [coinData, setCoinData] = useState<IAboutCoin>();
   const [coinNews, setCoinNews] = useState<ICoinNews[]>([]);
+
+  const initialState = {
+    graph: false,
+    about: false,
+    news: false,
+  };
+
+  type Action = {
+    type: "graph" | "about" | "news" | "reset";
+    payload?: boolean;
+  };
+
+  const reducer = (state: typeof initialState, action: Action) => {
+    let newState: typeof initialState;
+
+    switch (action.type) {
+      case "graph":
+        return (newState = {
+          ...state,
+          graph: action.payload as boolean,
+        });
+      case "about":
+        return (newState = {
+          ...state,
+          about: action.payload as boolean,
+        });
+      case "news":
+        return (newState = {
+          ...state,
+          news: action.payload as boolean,
+        });
+      default:
+        return initialState;
+    }
+  };
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const getData = useCallback(async () => {
     const graphData = await getCoinGraphData(id);
@@ -34,7 +69,21 @@ const CryptoDashboard = () => {
 
   useEffect(() => {
     getData();
+    return () => {
+      setGraphData([]);
+      setCoinData(undefined);
+      setCoinNews([]);
+    };
   }, [getData, id]);
+
+  useEffect(() => {
+    graphData && dispatch({ type: "graph", payload: true });
+    coinData && dispatch({ type: "about", payload: true });
+    coinNews && dispatch({ type: "news", payload: true });
+    return () => {
+      dispatch({ type: "reset" });
+    };
+  }, [coinData, graphData, coinData, id]);
 
   return (
     <SCryptoDashboard
@@ -42,14 +91,31 @@ const CryptoDashboard = () => {
       data-aos-duration="2000"
       data-aos-delay="500"
     >
-      <AboutCoin coinData={coinData} />
-      <CoinNews
-        coinNews={coinNews}
-        coinName={id}
-        coinImage={coinData?.image.large}
-      />
-      <CoinLineGraph graphData={graphData} coinData={coinData} />
-      <TrendingCoins numbers={false} />
+      {state.about ? (
+        <AboutCoin coinData={coinData} className="about-coin" />
+      ) : (
+        <div className="skeleton"></div>
+      )}
+      {state.news ? (
+        <CoinNews
+          className="coin-news"
+          coinNews={coinNews}
+          coinName={id}
+          coinImage={coinData?.image.large}
+        />
+      ) : (
+        <div className="skeleton"></div>
+      )}
+      {state.graph ? (
+        <CoinLineGraph
+          className="coin-graph"
+          graphData={graphData}
+          coinData={coinData}
+        />
+      ) : (
+        <div className="skeleton"></div>
+      )}
+      <TrendingCoins className="trending-coins" numbers={false} />
     </SCryptoDashboard>
   );
 };

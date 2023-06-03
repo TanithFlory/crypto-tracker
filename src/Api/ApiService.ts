@@ -5,7 +5,7 @@ export const getBasicCoinData = (): Promise<ICoin[]> => {
   let i = 1;
   let data: ICoin[] = [];
 
-  return new Promise<ICoin[]>(async (resolve) => {
+  return new Promise<ICoin[]>(async (resolve, reject) => {
     while (i <= 3) {
       const response = await axios.get(
         `https://api.coingecko.com/api/v3/coins/markets`,
@@ -55,11 +55,18 @@ export const getCoinNews = (id: string | undefined): Promise<ICoinNews[]> => {
     const response = await axios.get(`https://gnews.io/api/v4/search`, {
       params: {
         q: `"${id}-crypto"`,
-        apikey: "dabdde799d4f9f81e89ec04e84c52351",
+        apikey: "cc9f1035b3c422c55559f2fbeaf4a597",
         lang: "en",
         max: 10,
       },
     });
-    resolve(response.data.articles);
+    if (response.data.articles.length) {
+      resolve(response.data.articles);
+    } else {
+      const response = await axios.get(
+        "https://gnews.io/api/v4/search?q=cryptocurrency&apikey=cc9f1035b3c422c55559f2fbeaf4a597&max=10"
+      );
+      resolve(response.data.articles);
+    }
   });
 };

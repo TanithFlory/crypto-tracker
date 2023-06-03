@@ -4,20 +4,17 @@ import formatNumber from "../../Utils/numberFormat";
 import { BsGithub, BsReddit } from "react-icons/bs";
 interface IProps {
   coinData: IAboutCoin | undefined;
+  className: string;
 }
 
 const AboutCoin = (props: IProps) => {
   return (
-    <SAboutCoin className="custom-scroll">
+    <SAboutCoin className={`custom-scroll ${props.className}`}>
       <div>
         <h1 className="gradient-text">About {props.coinData?.name}</h1>
       </div>
       <div>
-        <img
-          className="skeleton"
-          src={props.coinData?.image.large}
-          alt="coin"
-        />
+        <img src={props.coinData?.image.large} alt="coin" />
         <div>
           <h4>{props.coinData?.name}</h4>
           <p>
@@ -42,11 +39,11 @@ const AboutCoin = (props: IProps) => {
           <h4>Market Data </h4>
           <div>
             <span>High 24h:</span>
-            <span>{props.coinData?.market_data.high_24h.usd}</span>
+            <span>{props.coinData?.market_data.high_24h.usd}$</span>
           </div>
           <div>
             <span> Current Price: </span>
-            <span>{props.coinData?.market_data.current_price.usd}</span>
+            <span>{props.coinData?.market_data.current_price.usd}$</span>
           </div>
           <div>
             <span>Market Capacity: </span>

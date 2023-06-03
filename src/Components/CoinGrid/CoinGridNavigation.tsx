@@ -12,7 +12,7 @@ const CoinGridNavigation = (props: IProps) => {
   return (
     <SCoinGridNavigation>
       <div>
-        <button>
+        <button onClick={() => props.setPageNumber(1)}>
           <BsSkipStartCircle />
         </button>
       </div>

@@ -5,6 +5,7 @@ import { ITrendingCoin } from "../../types";
 
 interface IProps {
   numbers: boolean;
+  className: string;
 }
 const TrendingCoins = (props: IProps) => {
   const [trendingCoin, setTrendingCoin] = useState<ITrendingCoin[]>();
@@ -18,7 +19,7 @@ const TrendingCoins = (props: IProps) => {
     getData();
   }, [getData]);
   return (
-    <STrendingCoins className="custom-scroll">
+    <STrendingCoins className={`custom-scroll ${props.className}`}>
       <h1 className="gradient-text">Trending Coins</h1>
       {trendingCoin?.map((d, index: number) => {
         return (
@@ -36,7 +37,7 @@ const TrendingCoins = (props: IProps) => {
             }
           >
             {props.numbers && <div>{index + 1}</div>}
-            <img className="skeleton" src={d.item.large} alt="coin" />
+            <img src={d.item.large} alt="coin" />
             <div>
               <h3>
                 {d.item.name.length > 16

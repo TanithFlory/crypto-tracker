@@ -1,12 +1,12 @@
 import { styled } from "styled-components";
 
 const SCoinNews = styled.div`
-  grid-column: 2 / span 2;
   width: 100%;
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
   max-height: 502px;
+  min-height: 502px;
   background-color: var(--clr-purple);
   border-radius: 12px;
   & > div:first-child {

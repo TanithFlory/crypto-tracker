@@ -7,6 +7,7 @@ import formatNumber from "../../Utils/numberFormat";
 interface IProps {
   graphData: TCoinPrice[];
   coinData: IAboutCoin | undefined;
+  className: string;
 }
 
 const CoinLineGraph = (props: IProps) => {
@@ -156,7 +157,7 @@ const CoinLineGraph = (props: IProps) => {
   }, [ref, props.graphData, width]);
 
   return (
-    <SCoinLineGraph ref={setRef}>
+    <SCoinLineGraph ref={setRef} className={props.className}>
       <div>
         <h1 className="gradient-text">Coin Chart</h1>
       </div>

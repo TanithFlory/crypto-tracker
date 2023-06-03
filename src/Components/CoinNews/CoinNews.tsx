@@ -6,13 +6,14 @@ interface IProps {
   coinNews: ICoinNews[];
   coinName: string | undefined;
   coinImage: string | undefined;
+  className: string;
 }
 
 const CoinNews = (props: IProps) => {
   useAos();
 
   return (
-    <SCoinNews className="custom-scroll">
+    <SCoinNews className={`custom-scroll ${props.className}`}>
       <div data-aos="fade-down" data-aos-duration={1000} data-aos-delay={1000}>
         <h1 className="gradient-text">News </h1>
         <span>
@@ -21,7 +22,6 @@ const CoinNews = (props: IProps) => {
       </div>
       <div>
         {props.coinNews?.map((d, index) => {
-          console.log(d);
           return (
             <a href={d.url} key={index}>
               <div>

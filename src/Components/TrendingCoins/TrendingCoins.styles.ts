@@ -5,8 +5,7 @@ interface IProps {
 }
 
 export const STrendingCoins = styled.div`
-  grid-row: 1 / span 2;
-  grid-column: 4;
+
   overflow: hidden;
   background-color: var(--clr-purple);
   display: flex;

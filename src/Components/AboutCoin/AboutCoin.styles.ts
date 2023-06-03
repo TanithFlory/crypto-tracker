@@ -8,7 +8,6 @@ const SAboutCoin = styled.div`
   padding: 1.2rem;
   max-height: 502px;
   min-height: 502px;
-  grid-row: 1;
   box-sizing: border-box;
   h1,
   h4,

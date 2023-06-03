@@ -28,7 +28,7 @@ const CoinGrid = () => {
                 <span> {d.market_cap_rank}</span>
               </div>
               <h2 className="gradient-text">{d.name}</h2>
-              <img src={d.image} alt="coin" className="skeleton" />
+              <img src={d.image} alt="coin"/>
               <span>
                 Price: <span>{d.current_price}$</span>
               </span>

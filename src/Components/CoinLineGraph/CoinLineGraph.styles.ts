@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 const SCoinLineGraph = styled.div`
-  grid-column: 1 / span 3;
   background-color: var(--clr-purple);
   padding: 1rem;
   border-radius: 16px;
